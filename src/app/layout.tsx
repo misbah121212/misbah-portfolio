@@ -20,7 +20,7 @@ const greatVibes = Great_Vibes({
 });
 
 export const metadata: Metadata = {
-  title: "Umme Misbah Sikandar | AI/ML Software Engineer",
+  title: "Misbah | AI&ML Engineer",
   description: "Portfolio of Umme Misbah Sikandar, specializing in AI, Machine Learning, Full-Stack Development, and Cloud.",
 };
 
