@@ -59,33 +59,32 @@ export const About = () => {
         />
       </div>
 
-      <div ref={containerRef} className="relative z-10 w-full max-w-6xl mx-auto flex flex-col gap-16 mt-8">
+      <div ref={containerRef} className="relative z-10 w-full max-w-6xl mx-auto flex flex-col gap-16">
         
-        {/* Generated 3D Workspace Floating Image */}
-        <motion.div 
-          style={{ y: y1 }}
-          className="absolute -top-10 -right-10 md:-right-20 w-[400px] md:w-[600px] z-0 pointer-events-none opacity-90"
-        >
-          <motion.img 
-            src="/3d-workspace.png" 
-            alt="3D Aesthetic Workspace" 
-            className="w-full h-auto mix-blend-multiply drop-shadow-2xl"
-            animate={{
-              y: [0, -20, 0],
-              rotate: [0, 2, -2, 0]
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-        </motion.div>
+        {/* Floating 3D CSS Spheres */}
+        <motion.div
+          animate={{ y: [0, -20, 0], x: [0, 10, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-10 -right-4 md:-right-12 w-24 h-24 md:w-32 md:h-32 rounded-full z-20 pointer-events-none"
+          style={{
+            background: "radial-gradient(circle at 30% 30%, #ffffff, #e2d5ef 60%, #a881d3 90%)",
+            boxShadow: "0 20px 40px rgba(0,0,0,0.1), inset -10px -10px 20px rgba(0,0,0,0.1)"
+          }}
+        />
+        <motion.div
+          animate={{ y: [0, 30, 0], x: [0, -15, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute top-40 -left-6 md:-left-16 w-16 h-16 md:w-20 md:h-20 rounded-full z-20 pointer-events-none"
+          style={{
+            background: "radial-gradient(circle at 30% 30%, #ffffff, #ffc7b4 60%, #e8a087 90%)",
+            boxShadow: "0 15px 30px rgba(0,0,0,0.1), inset -8px -8px 16px rgba(0,0,0,0.1)"
+          }}
+        />
 
         {/* Professional Summary Section (Floating Glass Card) */}
         <motion.div 
           style={{ scale }}
-          className="w-full bg-white/40 backdrop-blur-2xl rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.05)] border border-white/80 group mt-20"
+          className="w-full bg-white/40 backdrop-blur-2xl rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.05)] border border-white/80 group"
         >
           {/* Glass reflections */}
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-white/10 to-white/60 pointer-events-none" />
