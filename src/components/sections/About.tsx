@@ -88,6 +88,8 @@ export const About = () => {
           transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 1 }}
           className="absolute bottom-[20%] left-[2%] w-96 h-96 bg-gradient-to-bl from-lavender-dark via-white to-peach blur-lg mix-blend-multiply shadow-[inset_-20px_-20px_50px_rgba(255,255,255,0.9),0_20px_40px_rgba(0,0,0,0.1)]"
         />
+      </div>
+      
       <div ref={containerRef} className="relative z-10 w-full max-w-6xl mx-auto flex flex-col gap-16">
         
         {/* Professional Summary Section (Floating Glass Card) */}
