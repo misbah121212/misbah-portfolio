@@ -62,10 +62,45 @@ export const About = () => {
       <div ref={containerRef} className="relative z-10 w-full max-w-6xl mx-auto flex flex-col gap-16">
         
         {/* Professional Summary Section (Floating Glass Card) */}
-        <motion.div 
-          style={{ scale }}
-          className="w-full bg-white/40 backdrop-blur-2xl rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.05)] border border-white/80 group"
-        >
+        <div className="relative w-full">
+          {/* Inspiration-style 3D Elements */}
+          {/* Top Left: Chrome Star */}
+          <motion.img 
+            src="/3d-star.png" 
+            alt="3D Star" 
+            animate={{ y: [0, -15, 0], rotate: [0, 5, -5, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -top-16 -left-10 md:-left-16 w-32 h-32 md:w-48 md:h-48 z-20 drop-shadow-2xl object-contain pointer-events-none" 
+          />
+          {/* Top Right: Pastel Flower */}
+          <motion.img 
+            src="/3d-flower.png" 
+            alt="3D Flower" 
+            animate={{ y: [0, 15, 0], rotate: [0, -5, 5, 0] }}
+            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="absolute -top-10 -right-6 md:-right-12 w-28 h-28 md:w-44 md:h-44 z-20 drop-shadow-2xl object-contain pointer-events-none" 
+          />
+          {/* Bottom Left: Glass Heart */}
+          <motion.img 
+            src="/3d-heart.png" 
+            alt="3D Heart" 
+            animate={{ y: [0, 20, 0], rotate: [0, 8, -8, 0] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+            className="absolute -bottom-16 -left-8 md:-left-16 w-36 h-36 md:w-52 md:h-52 z-20 drop-shadow-2xl object-contain pointer-events-none" 
+          />
+          {/* Bottom Right: Abstract Ribbon/Shape */}
+          <motion.img 
+            src="/3d-ribbon.png" 
+            alt="3D Ribbon" 
+            animate={{ y: [0, -10, 0], rotate: [0, -10, 10, 0] }}
+            transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+            className="absolute -bottom-12 -right-10 md:-right-20 w-32 h-32 md:w-48 md:h-48 z-20 drop-shadow-2xl object-contain pointer-events-none" 
+          />
+
+          <motion.div 
+            style={{ scale }}
+            className="w-full bg-white/40 backdrop-blur-2xl rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.05)] border border-white/80 group"
+          >
           {/* Glass reflections */}
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-white/10 to-white/60 pointer-events-none" />
           <div className="absolute -top-32 -right-32 w-64 h-64 bg-white rounded-full blur-3xl opacity-60 group-hover:scale-150 transition-transform duration-1000" />
@@ -100,7 +135,7 @@ export const About = () => {
             </motion.div>
           </div>
         </motion.div>
-
+        </div>
         {/* Education Section Wrapper */}
         <motion.div style={{ y: y2 }} className="relative w-full lg:w-4/5 self-end">
           
