@@ -51,8 +51,12 @@ export const Skills = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="flex flex-col gap-6 bg-white/5 backdrop-blur-md p-8 md:p-10 rounded-[2rem] border border-white/20 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all w-full"
+            className="flex flex-col gap-6 bg-white/5 backdrop-blur-xl p-8 md:p-10 rounded-[2rem] border border-white/20 shadow-[inset_0_2px_4px_rgba(255,255,255,0.3),_0_15px_40px_rgba(0,0,0,0.05)] hover:-translate-y-2 hover:scale-[1.02] hover:shadow-[inset_0_2px_4px_rgba(255,255,255,0.4),_0_25px_50px_rgba(0,0,0,0.1)] transition-all duration-500 w-full relative overflow-hidden group"
           >
+            {/* Glass reflection */}
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/20 via-transparent to-transparent pointer-events-none" />
+            
+            <div className="relative z-10 flex flex-col gap-6">
             <h3 className="font-sans font-bold uppercase tracking-widest text-sm text-navy mb-2">{cat.title}</h3>
             <div className="flex flex-wrap items-center gap-y-6 gap-x-2 md:gap-x-3">
               {cat.items.map((item, i) => (
@@ -65,6 +69,7 @@ export const Skills = () => {
                   )}
                 </Fragment>
               ))}
+              </div>
             </div>
           </motion.div>
         ))}
