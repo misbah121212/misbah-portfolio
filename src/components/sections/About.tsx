@@ -61,7 +61,14 @@ export const About = () => {
 
       <div ref={containerRef} className="relative z-10 w-full max-w-6xl mx-auto flex flex-col gap-16">
         
-
+        {/* 3D Element: Notebook Planner (Bottom Right) */}
+        <motion.div
+          animate={{ y: [0, 15, 0], rotate: [0, 2, -2, 0] }}
+          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-48 -right-6 md:-right-16 w-36 h-36 md:w-56 md:h-56 z-20 pointer-events-none"
+        >
+          <img src="/3d-notebook.png" alt="3D Notebook" className="w-full h-full object-contain drop-shadow-2xl" />
+        </motion.div>
 
         {/* Professional Summary Section (Floating Glass Card) */}
         <motion.div 
