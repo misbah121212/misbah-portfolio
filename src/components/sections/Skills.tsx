@@ -32,29 +32,6 @@ const skillsCategories = [
   }
 ];
 
-const certifications = [
-  {
-    org: "NVIDIA",
-    title: "Getting Started with AI on Jetson Nano",
-    desc: "Edge AI, embedded AI systems, and AI model deployment."
-  },
-  {
-    org: "Google / Coursera",
-    title: "AI & Generative AI Specializations",
-    desc: "Engineer AI Agents with ADK, Google AI Essentials, Intro to GenAI, Prompting Essentials."
-  },
-  {
-    org: "Cisco Networking Academy",
-    title: "Introduction to Cybersecurity",
-    desc: "Cyber threats, network security, data protection, and security best practices."
-  },
-  {
-    org: "Forage Job Simulations",
-    title: "Software Engineering & GenAI",
-    desc: "J.P. Morgan Software Engineering, BCG GenAI, Tata GenAI Data Analytics."
-  }
-];
-
 export const Skills = () => {
   return (
     <SectionWrapper id="skills" className="py-8 md:py-12 relative">
@@ -64,55 +41,26 @@ export const Skills = () => {
         <SparkleIcon className="w-4 h-4 text-peach" />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-        
-        {/* Left Column: Skills */}
-        <div className="flex flex-col gap-10">
-          {skillsCategories.map((cat, index) => (
-            <motion.div 
-              key={index}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-            >
-              <h3 className="font-sans font-bold uppercase tracking-widest text-xs text-navy/70 mb-4">{cat.title}</h3>
-              <div className="flex flex-wrap gap-2">
-                {cat.items.map((item, i) => (
-                  <span key={i} className={`px-4 py-2 rounded-full font-sans text-xs border border-navy/10 ${cat.color} ${cat.color.includes('bg-navy') ? '' : 'bg-opacity-30'}`}>
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Right Column: Certifications */}
-        <div className="flex flex-col">
-          <h3 className="font-sans font-bold uppercase tracking-widest text-xs text-navy/70 mb-6">Certifications & Training</h3>
-          
-          <div className="flex flex-col gap-6">
-            {certifications.map((cert, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="bg-white/60 backdrop-blur-sm rounded-[2rem] p-8 border border-white/80 shadow-sm hover:shadow-md transition-shadow"
-              >
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-2 h-2 rounded-full bg-peach" />
-                  <span className="font-sans font-bold uppercase tracking-widest text-[10px] text-navy/60">{cert.org}</span>
-                </div>
-                <h4 className="font-serif text-2xl text-navy mb-2">{cert.title}</h4>
-                <p className="font-sans text-sm text-navy/70 leading-relaxed">{cert.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {skillsCategories.map((cat, index) => (
+          <motion.div 
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+            className="flex flex-col gap-4 bg-white/50 backdrop-blur-md p-8 rounded-[2rem] border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all"
+          >
+            <h3 className="font-sans font-bold uppercase tracking-widest text-xs text-navy/70">{cat.title}</h3>
+            <div className="flex flex-wrap gap-2">
+              {cat.items.map((item, i) => (
+                <span key={i} className={`px-4 py-2 rounded-full font-sans text-xs border border-navy/10 ${cat.color} ${cat.color.includes('bg-navy') ? '' : 'bg-opacity-30'}`}>
+                  {item}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        ))}
       </div>
 
     </SectionWrapper>
