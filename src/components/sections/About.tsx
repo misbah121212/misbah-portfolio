@@ -59,12 +59,33 @@ export const About = () => {
         />
       </div>
 
-      <div ref={containerRef} className="relative z-10 w-full max-w-6xl mx-auto flex flex-col gap-16">
+      <div ref={containerRef} className="relative z-10 w-full max-w-6xl mx-auto flex flex-col gap-16 mt-8">
         
+        {/* Generated 3D Workspace Floating Image */}
+        <motion.div 
+          style={{ y: y1 }}
+          className="absolute -top-10 -right-10 md:-right-20 w-[400px] md:w-[600px] z-0 pointer-events-none opacity-90"
+        >
+          <motion.img 
+            src="/3d-workspace.png" 
+            alt="3D Aesthetic Workspace" 
+            className="w-full h-auto mix-blend-multiply drop-shadow-2xl"
+            animate={{
+              y: [0, -20, 0],
+              rotate: [0, 2, -2, 0]
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        </motion.div>
+
         {/* Professional Summary Section (Floating Glass Card) */}
         <motion.div 
           style={{ scale }}
-          className="w-full bg-white/40 backdrop-blur-2xl rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.05)] border border-white/80 group"
+          className="w-full bg-white/40 backdrop-blur-2xl rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.05)] border border-white/80 group mt-20"
         >
           {/* Glass reflections */}
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-white/10 to-white/60 pointer-events-none" />
