@@ -67,7 +67,7 @@ export const About = () => {
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
           className="absolute -top-16 -right-10 md:-right-24 w-40 h-40 md:w-56 md:h-56 z-20 pointer-events-none"
         >
-          <img src="/3d-laptop.png" alt="3D Laptop" className="w-full h-full object-contain mix-blend-multiply drop-shadow-2xl" />
+          <img src="/3d-laptop.png" alt="3D Laptop" className="w-full h-full object-contain drop-shadow-2xl" />
         </motion.div>
 
         {/* 3D Element 2: AI Brain Node (Bottom Left) */}
@@ -76,7 +76,7 @@ export const About = () => {
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
           className="absolute -bottom-12 -left-8 md:-left-20 w-32 h-32 md:w-48 md:h-48 z-20 pointer-events-none"
         >
-          <img src="/3d-ai-brain.png" alt="3D AI Brain" className="w-full h-full object-contain mix-blend-multiply drop-shadow-xl" />
+          <img src="/3d-ai-brain.png" alt="3D AI Brain" className="w-full h-full object-contain drop-shadow-xl" />
         </motion.div>
 
         {/* 3D Element 3: Coffee Cup (Top Left) */}
@@ -85,7 +85,7 @@ export const About = () => {
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
           className="absolute -top-10 -left-6 md:-left-16 w-28 h-28 md:w-40 md:h-40 z-20 pointer-events-none"
         >
-          <img src="/3d-coffee.png" alt="3D Coffee Cup" className="w-full h-full object-contain mix-blend-multiply drop-shadow-xl" />
+          <img src="/3d-coffee.png" alt="3D Coffee Cup" className="w-full h-full object-contain drop-shadow-xl" />
         </motion.div>
 
         {/* 3D Element 4: Notebook Planner (Bottom Right) */}
@@ -94,7 +94,7 @@ export const About = () => {
           transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
           className="absolute -bottom-16 -right-6 md:-right-16 w-36 h-36 md:w-48 md:h-48 z-20 pointer-events-none"
         >
-          <img src="/3d-notebook.png" alt="3D Notebook" className="w-full h-full object-contain mix-blend-multiply drop-shadow-2xl" />
+          <img src="/3d-notebook.png" alt="3D Notebook" className="w-full h-full object-contain drop-shadow-2xl" />
         </motion.div>
 
         {/* Professional Summary Section (Floating Glass Card) */}
