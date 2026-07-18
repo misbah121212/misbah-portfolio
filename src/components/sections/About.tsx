@@ -61,25 +61,29 @@ export const About = () => {
 
       <div ref={containerRef} className="relative z-10 w-full max-w-6xl mx-auto flex flex-col gap-16">
         
-        {/* Floating 3D CSS Spheres */}
+        {/* Floating Tech Element 1: Code Bracket (Software Engineer) */}
         <motion.div
-          animate={{ y: [0, -20, 0], x: [0, 10, 0] }}
+          animate={{ y: [0, -20, 0], x: [0, 10, 0], rotate: [0, 5, -5, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-10 -right-4 md:-right-12 w-24 h-24 md:w-32 md:h-32 rounded-full z-20 pointer-events-none"
-          style={{
-            background: "radial-gradient(circle at 30% 30%, #ffffff, #e2d5ef 60%, #a881d3 90%)",
-            boxShadow: "0 20px 40px rgba(0,0,0,0.1), inset -10px -10px 20px rgba(0,0,0,0.1)"
-          }}
-        />
+          className="absolute -top-12 -right-4 md:-right-16 w-24 h-24 md:w-32 md:h-32 bg-white/40 backdrop-blur-xl rounded-[2rem] z-20 flex items-center justify-center shadow-[0_20px_40px_rgba(0,0,0,0.05),inset_2px_2px_10px_rgba(255,255,255,0.9)] border border-white/80"
+        >
+          <span className="text-3xl md:text-5xl font-mono text-lavender-dark font-black tracking-tighter drop-shadow-sm">{"</>"}</span>
+        </motion.div>
+
+        {/* Floating Tech Element 2: Neural Network / AI (AI/ML Engineer) */}
         <motion.div
-          animate={{ y: [0, 30, 0], x: [0, -15, 0] }}
+          animate={{ y: [0, 30, 0], x: [0, -15, 0], rotate: [0, -10, 10, 0] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute top-40 -left-6 md:-left-16 w-16 h-16 md:w-20 md:h-20 rounded-full z-20 pointer-events-none"
-          style={{
-            background: "radial-gradient(circle at 30% 30%, #ffffff, #ffc7b4 60%, #e8a087 90%)",
-            boxShadow: "0 15px 30px rgba(0,0,0,0.1), inset -8px -8px 16px rgba(0,0,0,0.1)"
-          }}
-        />
+          className="absolute top-48 -left-6 md:-left-20 w-20 h-20 md:w-28 md:h-28 bg-white/40 backdrop-blur-xl rounded-[2rem] z-20 flex items-center justify-center shadow-[0_15px_30px_rgba(0,0,0,0.05),inset_2px_2px_10px_rgba(255,255,255,0.9)] border border-white/80"
+        >
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-peach drop-shadow-sm w-10 h-10 md:w-14 md:h-14" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+        </motion.div>
 
         {/* Professional Summary Section (Floating Glass Card) */}
         <motion.div 
