@@ -45,7 +45,7 @@ export const About = () => {
         alt="3D Ribbon" 
         animate={{ y: [0, -10, 0], rotate: [0, -10, 10, 0] }}
         transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-        className="absolute bottom-[10%] right-0 w-32 h-32 md:w-56 md:h-56 z-30 drop-shadow-2xl object-contain pointer-events-none" 
+        className="absolute bottom-[2%] -right-2 md:-right-4 w-32 h-32 md:w-56 md:h-56 z-30 drop-shadow-2xl object-contain pointer-events-none" 
       />
 
       <SectionWrapper className="pt-2 pb-8 md:pt-4 md:pb-24 relative">
