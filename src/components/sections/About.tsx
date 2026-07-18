@@ -95,10 +95,10 @@ export const About = () => {
         {/* Professional Summary Section (Floating Glass Card) */}
         <motion.div 
           style={{ scale }}
-          className="w-full bg-white/40 backdrop-blur-2xl rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.05)] border border-white/80 group"
+          className="w-full bg-white/20 backdrop-blur-2xl rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.05)] border border-white/80 group"
         >
           {/* Glass reflections */}
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-white/10 to-white/60 pointer-events-none" />
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-white/5 to-white/40 pointer-events-none" />
           <div className="absolute -top-32 -right-32 w-64 h-64 bg-white rounded-full blur-3xl opacity-60 group-hover:scale-150 transition-transform duration-1000" />
           
           <SparkleIcon className="absolute top-10 left-10 w-8 h-8 text-lavender-dark animate-pulse" />
