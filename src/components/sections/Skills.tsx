@@ -40,8 +40,8 @@ export const Skills = () => {
       
       <div className="flex items-center gap-4 mb-8 -mt-12">
         <h2 
-          className="text-4xl md:text-6xl text-[#613B22] drop-shadow-md"
-          style={{ fontFamily: 'var(--font-berkshire), serif', letterSpacing: '0.02em' }}
+          className="text-4xl md:text-6xl text-navy drop-shadow-sm font-serif"
+          style={{ fontFamily: 'var(--font-playfair), serif' }}
         >
           Technical Arsenal
         </h2>

@@ -32,8 +32,8 @@ export const SectionHeading = ({
   return (
     <div className={cn("flex flex-col mb-12", alignments[align], className)}>
       <h2 
-        className={cn("text-5xl md:text-7xl mb-4 drop-shadow-md", theme === 'navy' ? 'text-[#613B22]' : 'text-[#D4AF37]')}
-        style={{ fontFamily: 'var(--font-berkshire), serif', letterSpacing: '0.02em' }}
+        className={cn("text-5xl md:text-7xl font-serif mb-4", colors[theme])}
+        style={{ fontFamily: 'var(--font-playfair), serif' }}
       >
         {title}
       </h2>

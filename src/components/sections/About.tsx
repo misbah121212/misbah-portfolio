@@ -112,8 +112,8 @@ export const About = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-6xl text-[#613B22] mb-8 text-center drop-shadow-md"
-              style={{ fontFamily: 'var(--font-berkshire), serif', letterSpacing: '0.02em' }}
+              className="text-4xl md:text-6xl text-navy mb-8 text-center drop-shadow-sm font-serif"
+              style={{ fontFamily: 'var(--font-playfair), serif' }}
             >
               Professional Summary
             </motion.h2>
