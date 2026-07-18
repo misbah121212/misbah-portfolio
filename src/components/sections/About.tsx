@@ -17,9 +17,40 @@ export const About = () => {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8]);
 
   return (
-    <SectionWrapper id="about" className="pt-2 pb-8 md:pt-4 md:pb-24 relative overflow-hidden">
-      
-      {/* 3D / Liquid Organic Background Elements */}
+    <section id="about" className="relative w-full overflow-hidden">
+      {/* Screen-Edge 3D Elements (Outside max-w container so they hit true screen edges) */}
+      <motion.img 
+        src="/3d-star.png" 
+        alt="3D Star" 
+        animate={{ y: [0, -15, 0], rotate: [0, 5, -5, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-[10%] left-0 w-32 h-32 md:w-56 md:h-56 z-30 drop-shadow-2xl object-contain pointer-events-none" 
+      />
+      <motion.img 
+        src="/3d-flower.png" 
+        alt="3D Flower" 
+        animate={{ y: [0, 15, 0], rotate: [0, -5, 5, 0] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        className="absolute top-[25%] right-0 w-28 h-28 md:w-48 md:h-48 z-30 drop-shadow-2xl object-contain pointer-events-none" 
+      />
+      <motion.img 
+        src="/3d-heart.png" 
+        alt="3D Heart" 
+        animate={{ y: [0, 20, 0], rotate: [0, 8, -8, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+        className="absolute bottom-[30%] left-0 w-36 h-36 md:w-60 md:h-60 z-30 drop-shadow-2xl object-contain pointer-events-none" 
+      />
+      <motion.img 
+        src="/3d-ribbon.png" 
+        alt="3D Ribbon" 
+        animate={{ y: [0, -10, 0], rotate: [0, -10, 10, 0] }}
+        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+        className="absolute bottom-[10%] right-0 w-32 h-32 md:w-56 md:h-56 z-30 drop-shadow-2xl object-contain pointer-events-none" 
+      />
+
+      <SectionWrapper className="pt-2 pb-8 md:pt-4 md:pb-24 relative">
+        
+        {/* 3D / Liquid Organic Background Elements */}
       <div className="absolute inset-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
         {/* Giant typography */}
         <motion.div 
@@ -57,38 +88,6 @@ export const About = () => {
           transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 1 }}
           className="absolute bottom-[20%] left-[2%] w-96 h-96 bg-gradient-to-bl from-lavender-dark via-white to-peach blur-lg mix-blend-multiply shadow-[inset_-20px_-20px_50px_rgba(255,255,255,0.9),0_20px_40px_rgba(0,0,0,0.1)]"
         />
-      </div>
-
-      {/* Screen-Edge 3D Elements */}
-      <motion.img 
-        src="/3d-star.png" 
-        alt="3D Star" 
-        animate={{ y: [0, -15, 0], rotate: [0, 5, -5, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[10%] left-2 md:left-8 w-32 h-32 md:w-56 md:h-56 z-30 drop-shadow-2xl object-contain pointer-events-none" 
-      />
-      <motion.img 
-        src="/3d-flower.png" 
-        alt="3D Flower" 
-        animate={{ y: [0, 15, 0], rotate: [0, -5, 5, 0] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute top-[25%] right-2 md:right-8 w-28 h-28 md:w-48 md:h-48 z-30 drop-shadow-2xl object-contain pointer-events-none" 
-      />
-      <motion.img 
-        src="/3d-heart.png" 
-        alt="3D Heart" 
-        animate={{ y: [0, 20, 0], rotate: [0, 8, -8, 0] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-        className="absolute bottom-[30%] left-2 md:left-8 w-36 h-36 md:w-60 md:h-60 z-30 drop-shadow-2xl object-contain pointer-events-none" 
-      />
-      <motion.img 
-        src="/3d-ribbon.png" 
-        alt="3D Ribbon" 
-        animate={{ y: [0, -10, 0], rotate: [0, -10, 10, 0] }}
-        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-        className="absolute bottom-[10%] right-2 md:right-8 w-32 h-32 md:w-56 md:h-56 z-30 drop-shadow-2xl object-contain pointer-events-none" 
-      />
-
       <div ref={containerRef} className="relative z-10 w-full max-w-6xl mx-auto flex flex-col gap-16">
         
         {/* Professional Summary Section (Floating Glass Card) */}
@@ -185,5 +184,6 @@ export const About = () => {
 
       </div>
     </SectionWrapper>
+    </section>
   );
 };
