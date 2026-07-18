@@ -95,12 +95,11 @@ export const About = () => {
         {/* Professional Summary Section (Floating Glass Card) */}
         <motion.div 
           style={{ scale }}
-          className="w-full bg-white/10 backdrop-blur-3xl rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-[0_8px_32px_rgba(165,152,243,0.15)] border border-white/50 group hover:-translate-y-2 hover:scale-[1.01] hover:shadow-[0_15px_40px_rgba(165,152,243,0.25)] transition-all duration-500"
+          className="w-full bg-white/5 backdrop-blur-2xl rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-[inset_0_0_0_2px_rgba(255,255,255,0.4),inset_0_10px_25px_rgba(255,255,255,0.8),inset_0_-10px_25px_rgba(165,152,243,0.3),0_15px_40px_rgba(165,152,243,0.2)] group hover:-translate-y-2 hover:scale-[1.01] hover:shadow-[inset_0_0_0_2px_rgba(255,255,255,0.6),inset_0_10px_35px_rgba(255,255,255,0.9),inset_0_-10px_35px_rgba(165,152,243,0.4),0_25px_50px_rgba(165,152,243,0.3)] transition-all duration-500"
         >
-          {/* Iridescent Glass Reflections */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-lavender/30 via-white/5 to-peach/30 pointer-events-none" />
-          <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/40 to-transparent pointer-events-none" />
-          <div className="absolute inset-0 rounded-[3rem] shadow-[inset_0_0_30px_rgba(255,255,255,0.7)] pointer-events-none" />
+          {/* Liquid Glass Reflections */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-lavender/20 pointer-events-none" />
+          <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-white/50 to-transparent pointer-events-none opacity-80" />
           
           <div className="absolute -top-32 -right-32 w-64 h-64 bg-white rounded-full blur-3xl opacity-60 group-hover:scale-150 transition-transform duration-1000" />
           
