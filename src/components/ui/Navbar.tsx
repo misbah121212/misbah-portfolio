@@ -8,9 +8,9 @@ import { SparkleIcon } from "./SparkleIcon";
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Experience", href: "/experience" },
-  { name: "Projects", href: "/projects" },
   { name: "Skills", href: "/skills" },
+  { name: "Certifications", href: "/certifications" },
+  { name: "Projects", href: "/projects" },
   { name: "Achievements", href: "/achievements" },
 ];
 
