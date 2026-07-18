@@ -38,8 +38,13 @@ export const Skills = () => {
   return (
     <SectionWrapper id="skills" className="py-8 md:py-12 relative">
       
-      <div className="flex items-center gap-4 mb-8">
-        <h2 className="text-4xl md:text-5xl font-serif text-navy">Technical Arsenal</h2>
+      <div className="flex items-center gap-4 mb-8 -mt-12">
+        <h2 
+          className="text-4xl md:text-6xl text-navy drop-shadow-sm"
+          style={{ fontFamily: 'var(--font-playfair), serif' }}
+        >
+          Technical Arsenal
+        </h2>
         <SparkleIcon className="w-4 h-4 text-peach" />
       </div>
 
