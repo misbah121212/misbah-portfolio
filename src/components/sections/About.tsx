@@ -61,15 +61,6 @@ export const About = () => {
 
       <div ref={containerRef} className="relative z-10 w-full max-w-6xl mx-auto flex flex-col gap-16">
         
-        {/* 3D Element: Notebook Planner (Bottom Right) */}
-        <motion.div
-          animate={{ y: [0, 15, 0], rotate: [0, 2, -2, 0] }}
-          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-48 -right-6 md:-right-16 w-36 h-36 md:w-56 md:h-56 z-20 pointer-events-none"
-        >
-          <img src="/3d-notebook.png" alt="3D Notebook" className="w-full h-full object-contain drop-shadow-2xl" />
-        </motion.div>
-
         {/* Professional Summary Section (Floating Glass Card) */}
         <motion.div 
           style={{ scale }}
@@ -110,11 +101,22 @@ export const About = () => {
           </div>
         </motion.div>
 
-        {/* Education Section (Offset 3D Card) */}
-        <motion.div
-          style={{ y: y2 }}
-          className="w-full lg:w-4/5 self-end bg-navy/5 backdrop-blur-3xl rounded-[3rem] p-10 md:p-16 relative overflow-hidden shadow-[20px_20px_60px_rgba(0,0,0,0.05),-20px_-20px_60px_rgba(255,255,255,0.5)] border border-white/60 hover:shadow-[30px_30px_80px_rgba(0,0,0,0.1),-30px_-30px_80px_rgba(255,255,255,0.8)] transition-shadow duration-700"
-        >
+        {/* Education Section Wrapper */}
+        <motion.div style={{ y: y2 }} className="relative w-full lg:w-4/5 self-end">
+          
+          {/* 3D Element: Notebook Planner (Near Education) */}
+          <motion.div
+            animate={{ y: [0, 15, 0], rotate: [0, 2, -2, 0] }}
+            transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -top-16 -left-6 md:-left-24 w-40 h-40 md:w-64 md:h-64 z-20 pointer-events-none"
+          >
+            <img src="/3d-notebook.png" alt="3D Notebook" className="w-full h-full object-contain drop-shadow-2xl" />
+          </motion.div>
+
+          {/* Education Section (Offset 3D Card) */}
+          <div
+            className="w-full bg-navy/5 backdrop-blur-3xl rounded-[3rem] p-10 md:p-16 relative overflow-hidden shadow-[20px_20px_60px_rgba(0,0,0,0.05),-20px_-20px_60px_rgba(255,255,255,0.5)] border border-white/60 hover:shadow-[30px_30px_80px_rgba(0,0,0,0.1),-30px_-30px_80px_rgba(255,255,255,0.8)] transition-shadow duration-700"
+          >
           <div className="relative z-10 flex flex-col">
             <h2 
               className="text-3xl md:text-5xl font-serif text-navy mb-10 text-right drop-shadow-sm"
@@ -148,6 +150,7 @@ export const About = () => {
                 ))}
               </div>
             </div>
+          </div>
           </div>
         </motion.div>
 
