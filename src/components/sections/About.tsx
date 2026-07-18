@@ -65,28 +65,28 @@ export const About = () => {
         alt="3D Star" 
         animate={{ y: [0, -15, 0], rotate: [0, 5, -5, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[10%] left-0 -translate-x-1/2 w-40 h-40 md:w-64 md:h-64 z-20 drop-shadow-2xl object-contain pointer-events-none" 
+        className="absolute top-[10%] left-2 md:left-8 w-32 h-32 md:w-56 md:h-56 z-30 drop-shadow-2xl object-contain pointer-events-none" 
       />
       <motion.img 
         src="/3d-flower.png" 
         alt="3D Flower" 
         animate={{ y: [0, 15, 0], rotate: [0, -5, 5, 0] }}
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute top-[25%] right-0 translate-x-1/2 w-36 h-36 md:w-56 md:h-56 z-20 drop-shadow-2xl object-contain pointer-events-none" 
+        className="absolute top-[25%] right-2 md:right-8 w-28 h-28 md:w-48 md:h-48 z-30 drop-shadow-2xl object-contain pointer-events-none" 
       />
       <motion.img 
         src="/3d-heart.png" 
         alt="3D Heart" 
         animate={{ y: [0, 20, 0], rotate: [0, 8, -8, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-        className="absolute bottom-[30%] left-0 -translate-x-1/2 w-48 h-48 md:w-72 md:h-72 z-20 drop-shadow-2xl object-contain pointer-events-none" 
+        className="absolute bottom-[30%] left-2 md:left-8 w-36 h-36 md:w-60 md:h-60 z-30 drop-shadow-2xl object-contain pointer-events-none" 
       />
       <motion.img 
         src="/3d-ribbon.png" 
         alt="3D Ribbon" 
         animate={{ y: [0, -10, 0], rotate: [0, -10, 10, 0] }}
         transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-        className="absolute bottom-[10%] right-0 translate-x-1/2 w-40 h-40 md:w-64 md:h-64 z-20 drop-shadow-2xl object-contain pointer-events-none" 
+        className="absolute bottom-[10%] right-2 md:right-8 w-32 h-32 md:w-56 md:h-56 z-30 drop-shadow-2xl object-contain pointer-events-none" 
       />
 
       <div ref={containerRef} className="relative z-10 w-full max-w-6xl mx-auto flex flex-col gap-16">
