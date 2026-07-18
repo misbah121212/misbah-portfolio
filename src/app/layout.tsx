@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter, Great_Vibes } from "next/font/google";
+import { Playfair_Display, Inter, Great_Vibes, Berkshire_Swash } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/ui/Navbar";
 
@@ -19,6 +19,12 @@ const greatVibes = Great_Vibes({
   variable: "--font-great-vibes",
 });
 
+const berkshire = Berkshire_Swash({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-berkshire",
+});
+
 export const metadata: Metadata = {
   title: "Misbah | AI&ML Engineer",
   description: "Portfolio of Umme Misbah Sikandar, specializing in AI, Machine Learning, Full-Stack Development, and Cloud.",
@@ -31,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${playfair.variable} ${inter.variable} ${greatVibes.variable} antialiased pt-24`}>
+      <body className={`${playfair.variable} ${inter.variable} ${greatVibes.variable} ${berkshire.variable} antialiased pt-24`}>
         <Navbar />
         {children}
       </body>

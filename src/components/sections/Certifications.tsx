@@ -49,7 +49,7 @@ export const Certifications = () => {
         {/* Left Side: Title */}
         <div className="w-full lg:w-1/3 flex flex-col pt-8">
           <div className="flex items-center gap-4 mb-4">
-            <h2 className="text-5xl font-serif text-navy">Certifications</h2>
+            <h2 className="text-5xl text-[#613B22] drop-shadow-md" style={{ fontFamily: 'var(--font-berkshire), serif', letterSpacing: '0.02em' }}>Certifications</h2>
             <SparkleIcon className="w-5 h-5 text-peach" />
           </div>
           <p className="text-navy/60 font-sans mb-12 max-w-sm">

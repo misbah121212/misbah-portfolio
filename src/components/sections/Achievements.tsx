@@ -53,7 +53,7 @@ export const Achievements = () => {
     <SectionWrapper id="achievements" className="py-8 md:py-12 relative overflow-visible">
       
       <div className="flex items-center gap-4 mb-20">
-        <h2 className="text-4xl md:text-5xl font-serif text-white">Achievements & Patents</h2>
+        <h2 className="text-4xl md:text-5xl text-[#D4AF37] drop-shadow-md" style={{ fontFamily: 'var(--font-berkshire), serif', letterSpacing: '0.02em' }}>Achievements & Patents</h2>
         <SparkleIcon className="w-5 h-5 text-peach" />
       </div>
 
