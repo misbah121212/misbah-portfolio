@@ -95,10 +95,13 @@ export const About = () => {
         {/* Professional Summary Section (Floating Glass Card) */}
         <motion.div 
           style={{ scale }}
-          className="w-full bg-white/5 backdrop-blur-xl rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-[inset_0_2px_4px_rgba(255,255,255,0.3),_0_15px_40px_rgba(0,0,0,0.05)] border border-white/20 group hover:-translate-y-2 hover:scale-[1.01] hover:shadow-[inset_0_2px_4px_rgba(255,255,255,0.4),_0_25px_50px_rgba(0,0,0,0.1)] transition-all duration-500"
+          className="w-full bg-white/10 backdrop-blur-3xl rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-[0_8px_32px_rgba(165,152,243,0.15)] border border-white/50 group hover:-translate-y-2 hover:scale-[1.01] hover:shadow-[0_15px_40px_rgba(165,152,243,0.25)] transition-all duration-500"
         >
-          {/* Glass reflections */}
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/20 via-transparent to-transparent pointer-events-none" />
+          {/* Iridescent Glass Reflections */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-lavender/30 via-white/5 to-peach/30 pointer-events-none" />
+          <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/40 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 rounded-[3rem] shadow-[inset_0_0_30px_rgba(255,255,255,0.7)] pointer-events-none" />
+          
           <div className="absolute -top-32 -right-32 w-64 h-64 bg-white rounded-full blur-3xl opacity-60 group-hover:scale-150 transition-transform duration-1000" />
           
           <SparkleIcon className="absolute top-10 left-10 w-8 h-8 text-lavender-dark animate-pulse" />
