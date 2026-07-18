@@ -51,7 +51,7 @@ export const Skills = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="flex flex-col gap-6 bg-white/20 backdrop-blur-md p-8 md:p-10 rounded-[2rem] border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all w-full"
+            className="flex flex-col gap-6 bg-white/5 backdrop-blur-md p-8 md:p-10 rounded-[2rem] border border-white/20 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all w-full"
           >
             <h3 className="font-sans font-bold uppercase tracking-widest text-sm text-navy mb-2">{cat.title}</h3>
             <div className="flex flex-wrap items-center gap-y-6 gap-x-2 md:gap-x-3">
