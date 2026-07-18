@@ -17,7 +17,7 @@ export const About = () => {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8]);
 
   return (
-    <SectionWrapper id="about" className="pt-12 pb-8 md:pt-24 md:pb-24 relative overflow-hidden">
+    <SectionWrapper id="about" className="pt-2 pb-8 md:pt-4 md:pb-24 relative overflow-hidden">
       
       {/* 3D / Liquid Organic Background Elements */}
       <div className="absolute inset-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
