@@ -18,7 +18,7 @@ export const About = () => {
 
   return (
     <section id="about" className="relative w-full overflow-hidden">
-      <SectionWrapper className="pt-2 pb-8 md:pt-4 md:pb-24 relative">
+
       {/* Screen-Edge 3D Elements (Outside max-w container so they hit true screen edges) */}
 
       <motion.img 
