@@ -17,7 +17,7 @@ const achievements = [
   {
     num: "02",
     title: "Winner",
-    desc: "Hack2Skill Promptwars 2025 (VoteWise, 200+ teams)",
+    desc: "Hack2Skill Promptwars 2025 (CodeBeast, 200+ teams)",
     icon: <Trophy className="w-5 h-5 text-navy" />,
     color: "bg-peach text-navy",
     border: "border-peach"
