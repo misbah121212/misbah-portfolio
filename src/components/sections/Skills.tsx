@@ -76,8 +76,18 @@ export const Skills = () => {
                   {/* The Shiny Data Packet (Dot) */}
                   <motion.div 
                     className="absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-white shadow-[0_0_15px_6px_rgba(226,213,239,1)] z-0"
-                    animate={{ left: ["-20%", "120%"] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: i * 0.4 }}
+                    animate={{ 
+                      left: ["0%", isLast ? "100%" : "calc(100% + 0.75rem)", "0%", "0%"],
+                      opacity: [1, 1, 0, 0]
+                    }}
+                    transition={{ 
+                      duration: 1.5, 
+                      times: [0, 0.99, 0.991, 1],
+                      repeat: Infinity, 
+                      ease: "linear", 
+                      delay: i * 1.5,
+                      repeatDelay: (cat.items.length - 1) * 1.5
+                    }}
                   />
                   
                   {/* The Pill */}
