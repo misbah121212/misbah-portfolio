@@ -21,7 +21,10 @@ export const Contact = () => {
 
         {/* Left Side: Call to Action */}
         <div className="w-full lg:w-1/2 flex flex-col z-10">
-          <h2 className="text-3xl md:text-5xl font-serif text-lavender mb-4">
+          <h2 
+            className="text-4xl md:text-6xl font-serif text-lavender mb-4"
+            style={{ fontFamily: 'var(--font-playfair), serif' }}
+          >
             Let's Create <br className="hidden md:block"/>
             <span className="text-peach">Something Beautiful</span>
           </h2>
