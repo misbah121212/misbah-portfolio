@@ -87,14 +87,14 @@ export const About = () => {
             alt="3D Star" 
             animate={{ y: [0, -15, 0], rotate: [0, 5, -5, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -top-12 -left-8 md:-top-20 md:-left-16 w-32 h-32 md:w-56 md:h-56 z-30 drop-shadow-2xl object-contain pointer-events-none" 
+            className="absolute top-0 -left-12 md:-top-4 md:-left-24 lg:-left-32 w-28 h-28 md:w-48 md:h-48 z-30 drop-shadow-2xl object-contain pointer-events-none" 
           />
           <motion.img 
             src="/3d-flower.png" 
             alt="3D Flower" 
             animate={{ y: [0, 15, 0], rotate: [0, -5, 5, 0] }}
             transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute -bottom-12 -right-8 md:-bottom-20 md:-right-16 w-28 h-28 md:w-48 md:h-48 z-30 drop-shadow-2xl object-contain pointer-events-none" 
+            className="absolute bottom-4 -right-12 md:bottom-8 md:-right-24 lg:-right-32 w-24 h-24 md:w-40 md:h-40 z-30 drop-shadow-2xl object-contain pointer-events-none" 
           />
           <motion.div 
             style={{ scale }}
