@@ -54,7 +54,7 @@ export const Projects = () => {
     <SectionWrapper id="projects" className="py-8 md:py-12 relative">
       
       {/* Header Row */}
-      <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+      <div className="flex flex-col md:flex-row justify-between items-end mb-16 -mt-12">
         <SectionHeading 
           title="Selected Work" 
           subtitle="Featured Projects" 
