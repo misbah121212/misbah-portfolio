@@ -138,8 +138,15 @@ export const About = () => {
 
           {/* Education Section (Offset 3D Card) */}
           <div
-            className="w-full bg-navy/5 backdrop-blur-3xl rounded-[3rem] p-10 md:p-16 relative overflow-hidden shadow-[20px_20px_60px_rgba(0,0,0,0.05),-20px_-20px_60px_rgba(255,255,255,0.5)] border border-white/60 hover:shadow-[30px_30px_80px_rgba(0,0,0,0.1),-30px_-30px_80px_rgba(255,255,255,0.8)] transition-shadow duration-700"
+            className="w-full bg-navy/5 backdrop-blur-3xl rounded-[3rem] p-10 md:p-16 relative overflow-hidden shadow-[20px_20px_60px_rgba(0,0,0,0.05),-20px_-20px_60px_rgba(255,255,255,0.5)] border border-white/60 group hover:-translate-y-2 hover:scale-[1.01] hover:shadow-[30px_30px_80px_rgba(0,0,0,0.1),-30px_-30px_80px_rgba(255,255,255,0.8)] transition-all duration-700"
           >
+          {/* Glass Glossy Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-white/5 to-transparent pointer-events-none" />
+          {/* Diagonal Glass Sheen */}
+          <div className="absolute -top-[100%] -left-[100%] w-[300%] h-[300%] bg-gradient-to-br from-transparent via-white/20 to-transparent transform rotate-45 translate-x-[-30%] pointer-events-none group-hover:translate-x-[30%] transition-transform duration-1000 ease-in-out" />
+          
+          <div className="absolute -top-32 -right-32 w-64 h-64 bg-white rounded-full blur-3xl opacity-60 group-hover:scale-150 transition-transform duration-1000" />
+
           <div className="relative z-10 flex flex-col">
             <h2 
               className="text-4xl md:text-5xl font-serif text-navy mb-10 text-center drop-shadow-sm"
