@@ -24,14 +24,14 @@ export const About = () => {
         alt="3D Star" 
         animate={{ y: [0, -15, 0], rotate: [0, 5, -5, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -top-[5%] -left-2 md:-left-4 w-32 h-32 md:w-56 md:h-56 z-30 drop-shadow-2xl object-contain pointer-events-none" 
+        className="absolute top-[8%] -left-4 md:-left-10 w-32 h-32 md:w-56 md:h-56 z-30 drop-shadow-2xl object-contain pointer-events-none" 
       />
       <motion.img 
         src="/3d-flower.png" 
         alt="3D Flower" 
         animate={{ y: [0, 15, 0], rotate: [0, -5, 5, 0] }}
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute top-[20%] -right-2 md:-right-4 w-28 h-28 md:w-48 md:h-48 z-30 drop-shadow-2xl object-contain pointer-events-none" 
+        className="absolute top-[68%] -right-4 md:-right-8 w-28 h-28 md:w-48 md:h-48 z-30 drop-shadow-2xl object-contain pointer-events-none" 
       />
       <motion.img 
         src="/3d-heart.png" 
@@ -90,7 +90,7 @@ export const About = () => {
         />
       </div>
       
-      <div ref={containerRef} className="relative z-10 w-full max-w-6xl mx-auto flex flex-col gap-16 -mt-8">
+      <div ref={containerRef} className="relative z-10 w-full max-w-6xl mx-auto flex flex-col gap-16">
         
         {/* Professional Summary Section (Floating Glass Card) */}
         <motion.div 
