@@ -70,12 +70,12 @@ export const Skills = () => {
                 const isLast = i === cat.items.length - 1;
                 return (
                 <div key={i} className="relative flex items-center group/skill">
-                  {/* The 3D Wire (Glass Effect) */}
-                  <div className={`absolute top-1/2 left-0 h-[4px] bg-white/30 backdrop-blur-md border-y border-white/50 shadow-[0_0_10px_rgba(255,255,255,0.5)] z-0 ${isLast ? 'w-full' : 'w-[calc(100%+0.5rem)] md:w-[calc(100%+0.75rem)]'}`} />
+                  {/* The 3D Wire (Shiny Lilac) */}
+                  <div className={`absolute top-1/2 left-0 h-[4px] bg-gradient-to-r from-lavender/60 via-lavender-dark/80 to-lavender/60 backdrop-blur-md border-y border-lavender/50 shadow-[0_0_12px_rgba(194,173,217,0.8)] z-0 ${isLast ? 'w-full' : 'w-[calc(100%+0.5rem)] md:w-[calc(100%+0.75rem)]'}`} />
                   
                   {/* The Shiny Data Packet (Dot) */}
                   <motion.div 
-                    className="absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white shadow-[0_0_15px_5px_rgba(255,255,255,1)] z-0"
+                    className="absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-white shadow-[0_0_15px_6px_rgba(226,213,239,1)] z-0"
                     animate={{ left: ["-20%", "120%"] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: i * 0.4 }}
                   />
