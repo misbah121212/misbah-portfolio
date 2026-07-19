@@ -19,20 +19,7 @@ export const About = () => {
   return (
     <section id="about" className="relative w-full overflow-hidden">
       {/* Screen-Edge 3D Elements (Outside max-w container so they hit true screen edges) */}
-      <motion.img 
-        src="/3d-star.png" 
-        alt="3D Star" 
-        animate={{ y: [0, -15, 0], rotate: [0, 5, -5, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[8%] -left-4 md:-left-10 w-32 h-32 md:w-56 md:h-56 z-30 drop-shadow-2xl object-contain pointer-events-none" 
-      />
-      <motion.img 
-        src="/3d-flower.png" 
-        alt="3D Flower" 
-        animate={{ y: [0, 15, 0], rotate: [0, -5, 5, 0] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute top-[68%] -right-4 md:-right-8 w-28 h-28 md:w-48 md:h-48 z-30 drop-shadow-2xl object-contain pointer-events-none" 
-      />
+
       <motion.img 
         src="/3d-heart.png" 
         alt="3D Heart" 
@@ -93,10 +80,25 @@ export const About = () => {
       <div ref={containerRef} className="relative z-10 w-full max-w-6xl mx-auto flex flex-col gap-16">
         
         {/* Professional Summary Section (Floating Glass Card) */}
-        <motion.div 
-          style={{ scale }}
-          className="w-full bg-white/5 backdrop-blur-[10px] rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-[0_8px_32px_rgba(31,38,135,0.07)] border border-white/30 border-t-white/70 border-l-white/50 group hover:-translate-y-2 hover:scale-[1.01] hover:shadow-[0_15px_40px_rgba(31,38,135,0.12)] transition-all duration-700"
-        >
+        <div className="relative w-full">
+          <motion.img 
+            src="/3d-star.png" 
+            alt="3D Star" 
+            animate={{ y: [0, -15, 0], rotate: [0, 5, -5, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -top-12 -left-8 md:-top-20 md:-left-16 w-32 h-32 md:w-56 md:h-56 z-30 drop-shadow-2xl object-contain pointer-events-none" 
+          />
+          <motion.img 
+            src="/3d-flower.png" 
+            alt="3D Flower" 
+            animate={{ y: [0, 15, 0], rotate: [0, -5, 5, 0] }}
+            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="absolute -bottom-12 -right-8 md:-bottom-20 md:-right-16 w-28 h-28 md:w-48 md:h-48 z-30 drop-shadow-2xl object-contain pointer-events-none" 
+          />
+          <motion.div 
+            style={{ scale }}
+            className="w-full bg-white/5 backdrop-blur-[10px] rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-[0_8px_32px_rgba(31,38,135,0.07)] border border-white/30 border-t-white/70 border-l-white/50 group hover:-translate-y-2 hover:scale-[1.01] hover:shadow-[0_15px_40px_rgba(31,38,135,0.12)] transition-all duration-700"
+          >
           {/* Glass Glossy Overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-white/5 to-transparent pointer-events-none" />
           {/* Diagonal Glass Sheen */}
