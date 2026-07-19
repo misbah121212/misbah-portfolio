@@ -136,7 +136,8 @@ export const About = () => {
               </p>
             </motion.div>
           </div>
-        </motion.div>
+          </motion.div>
+        </div>
         {/* Education Section Wrapper */}
         <motion.div style={{ y: y2 }} className="relative w-full lg:w-4/5 self-end">
           
