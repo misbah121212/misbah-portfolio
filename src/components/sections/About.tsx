@@ -21,20 +21,6 @@ export const About = () => {
 
       {/* Screen-Edge 3D Elements (Outside max-w container so they hit true screen edges) */}
 
-      <motion.img 
-        src="/3d-heart.png" 
-        alt="3D Heart" 
-        animate={{ y: [0, 20, 0], rotate: [0, 8, -8, 0] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-        className="absolute bottom-[30%] left-0 w-36 h-36 md:w-60 md:h-60 z-30 drop-shadow-2xl object-contain pointer-events-none" 
-      />
-      <motion.img 
-        src="/3d-ribbon.png" 
-        alt="3D Ribbon" 
-        animate={{ y: [0, -10, 0], rotate: [0, -10, 10, 0] }}
-        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-        className="absolute bottom-[2%] -right-2 md:-right-4 w-32 h-32 md:w-56 md:h-56 z-30 drop-shadow-2xl object-contain pointer-events-none" 
-      />
 
       <SectionWrapper className="pt-2 pb-8 md:pt-4 md:pb-24 relative">
         
@@ -139,7 +125,7 @@ export const About = () => {
           </motion.div>
         </div>
         {/* Education Section Wrapper */}
-        <motion.div style={{ y: y2 }} className="relative w-full lg:w-4/5 self-end">
+        <motion.div style={{ y: y2 }} className="relative w-full self-center mx-auto">
           
           {/* 3D Element: Notebook Planner (Near Education) */}
           <motion.div
@@ -156,7 +142,7 @@ export const About = () => {
           >
           <div className="relative z-10 flex flex-col">
             <h2 
-              className="text-3xl md:text-5xl font-serif text-navy mb-10 text-right drop-shadow-sm"
+              className="text-4xl md:text-5xl font-serif text-navy mb-10 text-center drop-shadow-sm"
               style={{ fontFamily: 'var(--font-playfair), serif' }}
             >
               Education
