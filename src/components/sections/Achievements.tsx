@@ -10,7 +10,7 @@ const achievements = [
     num: "01",
     title: "Registered Design Patent",
     desc: "Smart Spectacle for Blind People, Government of India (Design No. 477817-001, Serial No. 219846)",
-    icon: <ShieldCheck className="w-5 h-5 text-white" />,
+    icon: <ShieldCheck className="w-5 h-5 text-navy" />,
     color: "bg-lavender text-navy",
     border: "border-lavender"
   },
@@ -18,7 +18,7 @@ const achievements = [
     num: "02",
     title: "Winner",
     desc: "Hack2Skill Promptwars 2025 (VoteWise, 200+ teams)",
-    icon: <Trophy className="w-5 h-5 text-white" />,
+    icon: <Trophy className="w-5 h-5 text-navy" />,
     color: "bg-peach text-navy",
     border: "border-peach"
   },
@@ -26,7 +26,7 @@ const achievements = [
     num: "03",
     title: "Top 10",
     desc: "Internal Smart India Hackathon 2025 (HydroHack, AI chatbot + Next.js backend)",
-    icon: <Target className="w-5 h-5 text-white" />,
+    icon: <Target className="w-5 h-5 text-navy" />,
     color: "bg-cream text-navy",
     border: "border-cream"
   },
@@ -34,7 +34,7 @@ const achievements = [
     num: "04",
     title: "Selected Applicant",
     desc: "Samsung Solve for Tomorrow 2026 (NeuroBuddy, gamified learning-difference screening app for children)",
-    icon: <Star className="w-5 h-5 text-white" />,
+    icon: <Star className="w-5 h-5 text-navy" />,
     color: "bg-lavender-dark text-navy",
     border: "border-lavender-dark"
   },
@@ -42,7 +42,7 @@ const achievements = [
     num: "05",
     title: "HackOn with Amazon 6.0",
     desc: "Participant – NutriSense AI and MedOrchestra under AWS track",
-    icon: <Star className="w-5 h-5 text-white" />,
+    icon: <Star className="w-5 h-5 text-navy" />,
     color: "bg-peach text-navy",
     border: "border-peach"
   }
@@ -53,7 +53,7 @@ export const Achievements = () => {
     <SectionWrapper id="achievements" className="py-8 md:py-12 relative overflow-visible">
       
       <div className="flex items-center gap-4 mb-20">
-        <h2 className="text-4xl md:text-5xl font-serif text-white">Achievements & Patents</h2>
+        <h2 className="text-4xl md:text-5xl font-serif text-navy">Achievements & Patents</h2>
         <SparkleIcon className="w-5 h-5 text-peach" />
       </div>
 
@@ -65,24 +65,24 @@ export const Achievements = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.15 }}
-            className="flex flex-col items-center text-center w-full md:w-[45%] lg:w-[30%] gap-6"
+            className="flex flex-col items-center text-center w-full md:w-[45%] lg:w-[30%] gap-6 p-8 rounded-[2rem] bg-white/10 backdrop-blur-md border border-white/40 shadow-[0_8px_32px_rgba(31,38,135,0.05)] hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(31,38,135,0.1)] transition-all duration-500"
           >
             {/* Icon & Number Badge */}
             <div className="relative w-20 h-20">
-              <div className="absolute inset-0 rounded-full border border-white/20 flex items-center justify-center bg-white/5 backdrop-blur-sm">
+              <div className={`absolute inset-0 rounded-full border border-white/60 flex items-center justify-center bg-white/40 backdrop-blur-md shadow-sm`}>
                 {item.icon}
               </div>
-              <div className={`absolute -top-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center font-bold font-sans text-xs shadow-md ${item.color}`}>
+              <div className={`absolute -top-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center font-bold font-sans text-xs shadow-md border border-white/50 ${item.color}`}>
                 {item.num}
               </div>
             </div>
             
             {/* Content */}
             <div className="flex flex-col flex-1 items-center">
-              <h4 className="font-sans font-bold text-white tracking-widest text-sm uppercase mb-3 text-balance leading-relaxed">
+              <h4 className="font-sans font-bold text-navy tracking-widest text-sm uppercase mb-3 text-balance leading-relaxed">
                 {item.title}
               </h4>
-              <p className="text-white/60 font-sans text-sm leading-relaxed max-w-[280px]">
+              <p className="text-navy/70 font-sans text-sm leading-relaxed max-w-[280px]">
                 {item.desc}
               </p>
             </div>
