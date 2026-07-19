@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Fragment } from "react";
 import { SectionWrapper } from "../ui/SectionWrapper";
 import { SparkleIcon } from "../ui/SparkleIcon";
-import { Animated3DArrow } from "../ui/Animated3DArrow";
+
 
 const skillsCategories = [
   {
@@ -66,16 +66,27 @@ export const Skills = () => {
             <div className="relative z-10 flex flex-col gap-6">
             <h3 className="font-sans font-bold uppercase tracking-widest text-sm text-navy mb-2">{cat.title}</h3>
             <div className="flex flex-wrap items-center gap-y-6 gap-x-2 md:gap-x-3">
-              {cat.items.map((item, i) => (
-                <Fragment key={i}>
-                  <span className={`px-5 py-2.5 rounded-full font-sans text-sm md:text-base font-medium border border-navy/10 shadow-sm ${cat.color} ${cat.color.includes('bg-navy') ? '' : 'bg-opacity-40'}`}>
+              {cat.items.map((item, i) => {
+                const isLast = i === cat.items.length - 1;
+                return (
+                <div key={i} className="relative flex items-center group/skill">
+                  {/* The 3D Wire */}
+                  <div className={`absolute top-1/2 left-0 h-[3px] bg-gradient-to-r from-lavender/40 via-peach/60 to-lavender/40 -z-10 shadow-[0_0_8px_rgba(255,182,143,0.4)] ${isLast ? 'w-full' : 'w-[calc(100%+0.5rem)] md:w-[calc(100%+0.75rem)]'}`} />
+                  
+                  {/* The Shiny Data Packet (Dot) */}
+                  <motion.div 
+                    className="absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-white shadow-[0_0_12px_4px_rgba(255,255,255,1)] -z-10"
+                    animate={{ left: ["-20%", "120%"] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: i * 0.4 }}
+                  />
+                  
+                  {/* The Pill */}
+                  <span className={`relative z-10 px-5 py-2.5 rounded-full font-sans text-sm md:text-base font-medium border shadow-[0_4px_10px_rgba(0,0,0,0.05)] hover:-translate-y-1 hover:shadow-[0_8px_15px_rgba(0,0,0,0.1)] transition-all duration-300 ${cat.color} ${cat.color.includes('bg-navy') ? 'border-navy/20' : 'bg-opacity-90 border-white/60 backdrop-blur-md'}`}>
                     {item}
                   </span>
-                  {i < cat.items.length - 1 && (
-                    <Animated3DArrow />
-                  )}
-                </Fragment>
-              ))}
+                </div>
+                );
+              })}
               </div>
             </div>
           </motion.div>
