@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, User, Code2, Briefcase, Award, ShieldCheck, Mail, Trophy } from "lucide-react";
+import { Home, User, Code2, Briefcase, Calendar, Award, ShieldCheck, Mail, Trophy } from "lucide-react";
 import { motion } from "framer-motion";
 
 const dockItems = [
   { name: "Home", href: "/", icon: <Home className="w-5 h-5" /> },
   { name: "About", href: "/about", icon: <User className="w-5 h-5" /> },
   { name: "Skills", href: "/skills", icon: <Code2 className="w-5 h-5" /> },
+  { name: "Experience", href: "/experience", icon: <Calendar className="w-5 h-5" /> },
   { name: "Projects", href: "/projects", icon: <Briefcase className="w-5 h-5" /> },
   { name: "Achievements", href: "/achievements", icon: <Trophy className="w-5 h-5" /> },
   { name: "Certificates", href: "/certifications", icon: <Award className="w-5 h-5" /> },

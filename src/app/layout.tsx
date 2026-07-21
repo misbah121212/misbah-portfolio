@@ -5,6 +5,7 @@ import { LeftProfilePanel } from "@/components/spatial/LeftProfilePanel";
 import { RightSkillsPanel } from "@/components/spatial/RightSkillsPanel";
 import { BottomDock } from "@/components/spatial/BottomDock";
 import { TopPillNav } from "@/components/spatial/TopPillNav";
+import { AmbientRoom } from "@/components/spatial/AmbientRoom";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -35,12 +36,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body 
-        className={`${playfair.variable} ${inter.variable} ${greatVibes.variable} antialiased h-screen w-screen overflow-hidden bg-cover bg-center text-white`}
-        style={{ backgroundImage: `url('/spatial-bg.png')` }}
-      >
-        {/* Spatial UI Wrapper */}
-        <div className="absolute inset-0 bg-navy/20 pointer-events-none" /> {/* Slight dark overlay for contrast */}
+      <body className={`${playfair.variable} ${inter.variable} ${greatVibes.variable} antialiased h-screen w-screen overflow-hidden text-white`}>
+        <AmbientRoom />
+        <CursorTracker />
         
         <div className="relative z-10 w-full h-full flex gap-6 p-6">
           <LeftProfilePanel />

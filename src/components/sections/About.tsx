@@ -1,191 +1,153 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef } from "react";
 import { SectionWrapper } from "../ui/SectionWrapper";
 import { SparkleIcon } from "../ui/SparkleIcon";
+import { TiltCard } from "../spatial/TiltCard";
 
 export const About = () => {
   const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
 
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, -150]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, 150]);
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8]);
+  // Animation constants for line-by-line reveal
+  const paragraphVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15
+      }
+    }
+  };
+
+  const lineVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+  };
 
   return (
-    <section id="about" className="relative w-full overflow-hidden">
-
-      {/* Screen-Edge 3D Elements (Outside max-w container so they hit true screen edges) */}
-
-
-      <SectionWrapper className="pt-2 pb-8 md:pt-4 md:pb-24 relative">
-        
-        {/* 3D / Liquid Organic Background Elements */}
-      <div className="absolute inset-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
-        {/* Giant typography */}
-        <motion.div 
-          style={{ y: y1 }}
-          className="absolute top-20 left-0 w-full flex flex-col items-center justify-center opacity-30 mix-blend-overlay"
-        >
-          <h1 className="text-[15vw] font-serif font-black text-lavender-dark leading-none tracking-tighter whitespace-nowrap drop-shadow-2xl">
-            MISBAH
-          </h1>
-          <h1 className="text-[18vw] font-serif font-black text-peach leading-none tracking-tighter whitespace-nowrap -mt-[8vw] drop-shadow-2xl">
-            ENGINEER
-          </h1>
-        </motion.div>
-
-        {/* Liquid 3D Blob 1 */}
-        <motion.div
-          animate={{
-            y: [0, -50, 0],
-            rotate: [0, 45, 0],
-            scale: [1, 1.2, 1],
-            borderRadius: ["40% 60% 70% 30% / 40% 50% 60% 50%", "60% 40% 30% 70% / 60% 30% 70% 40%", "40% 60% 70% 30% / 40% 50% 60% 50%"]
-          }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-[10%] right-[5%] w-72 h-72 bg-gradient-to-tr from-peach via-white to-lavender blur-md mix-blend-multiply shadow-[inset_20px_20px_40px_rgba(255,255,255,0.9),0_20px_40px_rgba(0,0,0,0.1)]"
-        />
-
-        {/* Liquid 3D Blob 2 */}
-        <motion.div
-          animate={{
-            y: [0, 60, 0],
-            rotate: [0, -45, 0],
-            scale: [1, 1.3, 1],
-            borderRadius: ["60% 40% 30% 70% / 60% 30% 70% 40%", "30% 70% 70% 30% / 30% 30% 70% 70%", "60% 40% 30% 70% / 60% 30% 70% 40%"]
-          }}
-          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute bottom-[20%] left-[2%] w-96 h-96 bg-gradient-to-bl from-lavender-dark via-white to-peach blur-lg mix-blend-multiply shadow-[inset_-20px_-20px_50px_rgba(255,255,255,0.9),0_20px_40px_rgba(0,0,0,0.1)]"
-        />
-      </div>
-      
-      <div ref={containerRef} className="relative z-10 w-full max-w-6xl mx-auto flex flex-col gap-16">
+    <section id="about" className="relative w-full overflow-hidden py-12">
+      <div ref={containerRef} className="relative z-10 w-full max-w-5xl mx-auto flex flex-col gap-16 px-6">
         
         {/* Professional Summary Section (Floating Glass Card) */}
         <div className="relative w-full">
+          {/* Floating 3D Elements */}
           <motion.img 
             src="/3d-star.png" 
             alt="3D Star" 
-            animate={{ y: [0, -15, 0], rotate: [0, 5, -5, 0] }}
+            animate={{ y: [0, -10, 0], rotate: [0, 5, -5, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-0 -left-12 md:-top-4 md:-left-24 lg:-left-32 w-28 h-28 md:w-48 md:h-48 z-30 drop-shadow-2xl object-contain pointer-events-none" 
+            className="absolute top-0 -left-12 md:-top-4 md:-left-20 w-28 h-28 md:w-36 md:h-36 z-30 drop-shadow-2xl object-contain pointer-events-none" 
           />
           <motion.img 
             src="/3d-flower.png" 
             alt="3D Flower" 
-            animate={{ y: [0, 15, 0], rotate: [0, -5, 5, 0] }}
+            animate={{ y: [0, 10, 0], rotate: [0, -5, 5, 0] }}
             transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute bottom-4 -right-12 md:bottom-8 md:-right-24 lg:-right-32 w-24 h-24 md:w-40 md:h-40 z-30 drop-shadow-2xl object-contain pointer-events-none" 
+            className="absolute bottom-4 -right-12 md:bottom-8 md:-right-20 w-24 h-24 md:w-32 md:h-32 z-30 drop-shadow-2xl object-contain pointer-events-none" 
           />
-          <motion.div 
-            style={{ scale }}
-            className="w-full bg-white/5 backdrop-blur-[10px] rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-[0_8px_32px_rgba(31,38,135,0.07)] border border-white/30 border-t-white/70 border-l-white/50 group hover:-translate-y-2 hover:scale-[1.01] hover:shadow-[0_15px_40px_rgba(31,38,135,0.12)] transition-all duration-700"
-          >
-          {/* Glass Glossy Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-white/5 to-transparent pointer-events-none" />
-          {/* Diagonal Glass Sheen */}
-          <div className="absolute -top-[100%] -left-[100%] w-[300%] h-[300%] bg-gradient-to-br from-transparent via-white/20 to-transparent transform rotate-45 translate-x-[-30%] pointer-events-none group-hover:translate-x-[30%] transition-transform duration-1000 ease-in-out" />
-          
-          <div className="absolute -top-32 -right-32 w-64 h-64 bg-white rounded-full blur-3xl opacity-60 group-hover:scale-150 transition-transform duration-1000" />
-          
-          <SparkleIcon className="absolute top-10 left-10 w-8 h-8 text-lavender-dark animate-pulse" />
-          <SparkleIcon className="absolute bottom-10 right-10 w-12 h-12 text-peach animate-bounce" />
 
-          <div className="relative z-10 flex flex-col items-center">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-4xl md:text-6xl text-navy mb-8 text-center drop-shadow-sm font-serif"
-              style={{ fontFamily: 'var(--font-playfair), serif' }}
-            >
-              Professional Summary
-            </motion.h2>
-            <motion.div 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="text-navy/80 text-lg md:text-2xl font-sans leading-relaxed text-justify max-w-4xl mx-auto font-medium"
-            >
-              <p>
-                As a final-year B.E. student specializing in Artificial Intelligence and Machine Learning, I bring hands-on experience in architecting and deploying production-grade, multi-agent AI systems on cloud infrastructure. I am highly proficient in Python, full-stack web development (React, Node.js, FastAPI), and cloud deployment platforms (GCP, Docker, Firebase). 
-              </p>
-              <br />
-              <p>
-                With a strong commitment to secure coding practices, agile workflows, and rigorous unit testing, I have successfully delivered high-quality solutions that have won multiple national hackathons and led to a registered patent. I am actively seeking a Software Engineering role where I can leverage my expertise to build scalable, high-impact application software.
-              </p>
-            </motion.div>
-          </div>
-          </motion.div>
+          <TiltCard className="w-full">
+            <div className="w-full bg-white/5 backdrop-blur-3xl rounded-[3rem] p-12 md:p-16 relative overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.15)] border border-white/10 group">
+              {/* Glass Sheen */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none rounded-[3rem]" />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shine pointer-events-none" />
+              
+              <SparkleIcon className="absolute top-10 left-10 w-8 h-8 text-lavender/40 animate-pulse" />
+              <SparkleIcon className="absolute bottom-10 right-10 w-12 h-12 text-peach/40 animate-bounce-slow" />
+
+              <div className="relative z-10 flex flex-col items-center">
+                <motion.h2 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="text-4xl md:text-5xl text-white mb-8 text-center drop-shadow-sm font-serif"
+                  style={{ fontFamily: 'var(--font-playfair), serif' }}
+                >
+                  Professional Summary
+                </motion.h2>
+
+                {/* Line-by-line fade in paragraph */}
+                <motion.div 
+                  variants={paragraphVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                  className="text-white/80 text-sm md:text-base font-sans leading-relaxed text-justify max-w-3xl mx-auto space-y-4"
+                >
+                  <motion.p variants={lineVariants}>
+                    As a final-year B.E. student specializing in Artificial Intelligence and Machine Learning, I bring hands-on experience in architecting and deploying production-grade, multi-agent AI systems on cloud infrastructure. I am highly proficient in Python, full-stack web development (React, Node.js, FastAPI), and cloud deployment platforms (GCP, Docker, Firebase).
+                  </motion.p>
+                  <motion.p variants={lineVariants}>
+                    With a strong commitment to secure coding practices, agile workflows, and rigorous unit testing, I have successfully delivered high-quality solutions that have won multiple national hackathons and led to a registered patent. I am actively seeking a Software Engineering role where I can leverage my expertise to build scalable, high-impact application software.
+                  </motion.p>
+                </motion.div>
+              </div>
+            </div>
+          </TiltCard>
         </div>
+
         {/* Education Section Wrapper */}
-        <motion.div style={{ y: y2 }} className="relative w-full self-center mx-auto">
-          
-          {/* 3D Element: Notebook Planner (Near Education) */}
+        <div className="relative w-full">
+          {/* Floating 3D Notebook */}
           <motion.div
-            animate={{ y: [0, 15, 0], rotate: [0, 2, -2, 0] }}
+            animate={{ y: [0, 8, 0], rotate: [0, 2, -2, 0] }}
             transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -top-16 -left-6 md:-left-24 w-40 h-40 md:w-64 md:h-64 z-20 pointer-events-none"
+            className="absolute -top-16 -left-6 md:-left-20 w-36 h-36 md:w-48 md:h-48 z-20 pointer-events-none"
           >
             <img src="/3d-notebook.png" alt="3D Notebook" className="w-full h-full object-contain drop-shadow-2xl" />
           </motion.div>
 
-          {/* Education Section (Offset 3D Card) */}
-          <div
-            className="w-full bg-navy/5 backdrop-blur-3xl rounded-[3rem] p-10 md:p-16 relative overflow-hidden shadow-[20px_20px_60px_rgba(0,0,0,0.05),-20px_-20px_60px_rgba(255,255,255,0.5)] border border-white/60 group hover:-translate-y-2 hover:scale-[1.01] hover:shadow-[30px_30px_80px_rgba(0,0,0,0.1),-30px_-30px_80px_rgba(255,255,255,0.8)] transition-all duration-700"
-          >
-          {/* Glass Glossy Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-white/5 to-transparent pointer-events-none" />
-          {/* Diagonal Glass Sheen */}
-          <div className="absolute -top-[100%] -left-[100%] w-[300%] h-[300%] bg-gradient-to-br from-transparent via-white/20 to-transparent transform rotate-45 translate-x-[-30%] pointer-events-none group-hover:translate-x-[30%] transition-transform duration-1000 ease-in-out" />
-          
-          <div className="absolute -top-32 -right-32 w-64 h-64 bg-white rounded-full blur-3xl opacity-60 group-hover:scale-150 transition-transform duration-1000" />
+          <TiltCard className="w-full">
+            <div className="w-full bg-white/5 backdrop-blur-3xl rounded-[3rem] p-10 md:p-16 relative overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.15)] border border-white/10 group">
+              {/* Glass Sheen */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none rounded-[3rem]" />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shine pointer-events-none" />
 
-          <div className="relative z-10 flex flex-col">
-            <h2 
-              className="text-4xl md:text-5xl font-serif text-navy mb-10 text-center drop-shadow-sm"
-              style={{ fontFamily: 'var(--font-playfair), serif' }}
-            >
-              Education
-            </h2>
-            
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b-2 border-navy/10 pb-8 mb-8">
-              <div>
-                <h3 className="text-2xl md:text-3xl font-sans font-black text-navy mb-2 tracking-tight">HKBK College of Engineering (VTU)</h3>
-                <p className="text-navy/80 font-sans text-xl font-medium">B.E. in Artificial Intelligence & Machine Learning</p>
-              </div>
-              <div className="text-left md:text-right mt-6 md:mt-0 bg-white/60 px-6 py-4 rounded-3xl shadow-sm border border-white">
-                <p className="text-navy font-sans font-black uppercase tracking-widest text-sm mb-1">2023 - 2027</p>
-                <p className="text-peach font-sans font-black text-xl">CGPA: 8.0 / 10</p>
+              <div className="relative z-10 flex flex-col">
+                <h2 
+                  className="text-4xl md:text-5xl font-serif text-white mb-10 text-center drop-shadow-sm"
+                  style={{ fontFamily: 'var(--font-playfair), serif' }}
+                >
+                  Education
+                </h2>
+                
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-white/10 pb-8 mb-8">
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-sans font-bold text-white mb-2 tracking-tight">HKBK College of Engineering (VTU)</h3>
+                    <p className="text-white/70 font-sans text-sm md:text-base">B.E. in Artificial Intelligence & Machine Learning</p>
+                  </div>
+                  <div className="text-left md:text-right mt-6 md:mt-0 bg-white/5 px-6 py-4 rounded-3xl border border-white/10 backdrop-blur-md">
+                    <p className="text-lavender font-sans font-bold uppercase tracking-widest text-[10px] mb-1">2023 - 2027</p>
+                    <p className="text-peach font-sans font-bold text-lg">CGPA: 8.0 / 10</p>
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 className="text-white/50 font-sans font-bold uppercase tracking-widest text-[10px] mb-6">Relevant Coursework</h4>
+                  <div className="flex flex-wrap gap-3 mt-2">
+                    {["Machine Learning", "Natural Language Processing", "Cloud Computing & Security", "Data Structures & Algorithms", "Operating Systems", "Computer Networks (TCP/IP)"].map((course, idx) => (
+                      <motion.span 
+                        key={idx} 
+                        whileHover={{ 
+                          scale: 1.05, 
+                          y: -3, 
+                          backgroundColor: "rgba(255, 255, 255, 0.15)",
+                          borderColor: "rgba(255, 255, 255, 0.3)" 
+                        }}
+                        className="bg-white/5 text-white/90 px-5 py-2.5 rounded-full font-sans text-xs border border-white/10 cursor-default transition-all duration-300 shadow-sm"
+                      >
+                        {course}
+                      </motion.span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
-            
-            <div>
-              <h4 className="text-navy font-sans font-bold uppercase tracking-widest text-sm mb-6 opacity-60">Relevant Coursework</h4>
-              <div className="flex flex-wrap gap-4 mt-2">
-                {["Machine Learning", "Natural Language Processing", "Cloud Computing & Security", "Data Structures & Algorithms", "Operating Systems", "Computer Networks (TCP/IP)"].map((course, idx) => (
-                  <motion.span 
-                    key={idx} 
-                    whileHover={{ scale: 1.05, y: -5 }}
-                    className="bg-white/80 text-navy px-6 py-3 rounded-full font-sans text-sm font-bold shadow-[0_8px_16px_rgba(0,0,0,0.03)] border border-lavender hover:bg-lavender transition-colors cursor-default"
-                  >
-                    {course}
-                  </motion.span>
-                ))}
-              </div>
-            </div>
-          </div>
-          </div>
-        </motion.div>
+          </TiltCard>
+        </div>
 
       </div>
-    </SectionWrapper>
     </section>
   );
 };
