@@ -21,7 +21,7 @@ export const BottomDock = () => {
 
   return (
     <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
-      <div className="flex items-center gap-3 bg-white/10 backdrop-blur-3xl border border-white/20 p-2.5 rounded-full shadow-[0_15px_50px_rgba(31,38,135,0.3)] relative overflow-visible">
+      <div className="flex items-center gap-3 bg-navy/45 backdrop-blur-3xl border border-white/15 p-2.5 rounded-full shadow-[0_15px_50px_rgba(0,0,0,0.3)] relative overflow-visible">
         {dockItems.map((item) => {
           const isActive = pathname === item.href;
           return (

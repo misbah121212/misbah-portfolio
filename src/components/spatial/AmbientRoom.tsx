@@ -96,9 +96,16 @@ export const AmbientRoom = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
         style={{ 
           backgroundImage: "url('/spatial-bg.png')",
-          filter: "blur(40px) brightness(0.65)" 
+          filter: "blur(50px) brightness(0.6)" 
         }}
       />
+
+      {/* Deep purple/violet gradient overlays to tint the room */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-navy via-navy/60 to-lavender-dark/20 mix-blend-multiply" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#1b1532]/60 via-[#362752]/30 to-[#120e24]/80" />
+      
+      {/* Glow highlight spot behind center panel */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vh] rounded-full bg-gradient-to-r from-purple-800/10 to-indigo-800/10 blur-[150px]" />
 
       {/* Volumetric Fog/Light Leak 1 (Lavender) */}
       <motion.div 

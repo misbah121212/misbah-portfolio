@@ -19,7 +19,7 @@ export const TopPillNav = () => {
 
   return (
     <div className="w-full flex justify-center pt-2">
-      <div className="flex items-center gap-2 bg-white/10 backdrop-blur-2xl px-3 py-3 rounded-full border border-white/20 shadow-[0_4px_24px_rgba(31,38,135,0.1)]">
+      <div className="flex items-center gap-2 bg-navy/45 backdrop-blur-3xl px-3 py-3 rounded-full border border-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.15)]">
         {navLinks.map((link) => {
           const isActive = pathname === link.href;
           

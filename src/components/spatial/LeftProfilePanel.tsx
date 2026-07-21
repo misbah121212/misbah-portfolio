@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 export const LeftProfilePanel = () => {
   return (
     <TiltCard className="w-[300px] h-full flex-shrink-0">
-      <div className="w-full h-full flex flex-col items-center bg-white/10 backdrop-blur-2xl border border-white/20 rounded-[2.5rem] p-6 shadow-[0_8px_32px_rgba(31,38,135,0.15)] relative overflow-hidden">
+      <div className="w-full h-full flex flex-col items-center bg-navy/35 backdrop-blur-3xl border border-white/15 rounded-[2.5rem] p-6 shadow-[0_12px_40px_rgba(0,0,0,0.25)] relative overflow-hidden">
         
         {/* Decorative background glow */}
         <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-lavender/10 to-transparent pointer-events-none" />
