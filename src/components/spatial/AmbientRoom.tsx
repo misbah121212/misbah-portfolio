@@ -21,7 +21,6 @@ export const AmbientRoom = () => {
       speedY: number;
       speedX: number;
       opacity: number;
-      fadeSpeed: number;
     }> = [];
 
     const resizeCanvas = () => {
@@ -32,41 +31,34 @@ export const AmbientRoom = () => {
     window.addEventListener("resize", resizeCanvas);
     resizeCanvas();
 
-    // Create initial dust particles
-    const particleCount = 45;
+    // Create exactly specified 2px to 4px dust particles at 15% opacity
+    const particleCount = 30;
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        size: Math.random() * 1.5 + 0.5,
-        speedY: -(Math.random() * 0.15 + 0.05),
-        speedX: (Math.random() - 0.5) * 0.1,
-        opacity: Math.random() * 0.5 + 0.1,
-        fadeSpeed: (Math.random() - 0.5) * 0.002,
+        size: Math.random() * 2 + 2, // 2px to 4px
+        speedY: -(Math.random() * 0.08 + 0.02), // Very slow vertical drift
+        speedX: (Math.random() - 0.5) * 0.05, // Very slow horizontal sway
+        opacity: 0.15, // Fixed 15% opacity
       });
     }
 
     const drawParticles = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "rgba(255, 255, 255, 0.6)";
 
       particles.forEach((p) => {
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${p.opacity})`;
-        ctx.shadowBlur = 8;
-        ctx.shadowColor = "rgba(226, 213, 239, 0.4)";
+        // Beautiful soft lavender particles
+        ctx.fillStyle = `rgba(155, 114, 255, ${p.opacity})`;
+        ctx.shadowBlur = 6;
+        ctx.shadowColor = "rgba(155, 114, 255, 0.2)";
         ctx.fill();
 
         // Update positions (gently drift up and sway)
         p.y += p.speedY;
         p.x += p.speedX;
-
-        // Opacity oscillation
-        p.opacity += p.fadeSpeed;
-        if (p.opacity <= 0.1 || p.opacity >= 0.7) {
-          p.fadeSpeed = -p.fadeSpeed;
-        }
 
         // Reset particle if it drifts off top or sides
         if (p.y < 0) {
@@ -91,51 +83,29 @@ export const AmbientRoom = () => {
 
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden -z-20">
-      {/* Blurred room background base */}
+      {/* Blurred room background base (Very soft suggested room blur) */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
         style={{ 
           backgroundImage: "url('/spatial-bg.png')",
-          filter: "blur(50px) brightness(0.6)" 
+          filter: "blur(60px) brightness(1.05) contrast(0.95)" 
         }}
       />
 
-      {/* Deep purple/violet gradient overlays to tint the room */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-navy via-navy/60 to-lavender-dark/20 mix-blend-multiply" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#1b1532]/60 via-[#362752]/30 to-[#120e24]/80" />
+      {/* 98% Opacity Apple Gradient Overlays (#FDFBFF Top-Left to #ECE3FA Bottom-Right) */}
+      <div 
+        className="absolute inset-0 opacity-[0.98] transition-opacity duration-1000"
+        style={{
+          background: "linear-gradient(135deg, #FDFBFF 0%, #ECE3FA 100%)"
+        }}
+      />
       
-      {/* Glow highlight spot behind center panel */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vh] rounded-full bg-gradient-to-r from-purple-800/10 to-indigo-800/10 blur-[150px]" />
-
-      {/* Volumetric Fog/Light Leak 1 (Lavender) */}
-      <motion.div 
-        className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] rounded-full bg-lavender/10 blur-[120px] pointer-events-none mix-blend-screen"
-        animate={{
-          x: [0, 40, -20, 0],
-          y: [0, -30, 20, 0],
-          scale: [1, 1.15, 0.9, 1]
-        }}
-        transition={{
-          duration: 25,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
-
-      {/* Volumetric Fog/Light Leak 2 (Peach) */}
-      <motion.div 
-        className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-peach/10 blur-[100px] pointer-events-none mix-blend-screen"
-        animate={{
-          x: [0, -50, 30, 0],
-          y: [0, 40, -30, 0],
-          scale: [1, 1.2, 0.85, 1]
-        }}
-        transition={{
-          duration: 30,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
+      {/* Soft Ambient volumetric lighting (Lavender & Peach glows) */}
+      <div className="absolute top-1/3 left-1/4 w-[60vw] h-[60vw] rounded-full bg-lavender/30 blur-[130px] pointer-events-none mix-blend-multiply" />
+      <div className="absolute bottom-1/4 right-1/4 w-[50vw] h-[50vw] rounded-full bg-peach/20 blur-[110px] pointer-events-none mix-blend-multiply" />
+      
+      {/* Dynamic glow spotlight behind center panel */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70vw] h-[70vh] rounded-full bg-gradient-to-r from-purple-300/10 to-indigo-300/10 blur-[120px]" />
 
       {/* Canvas for fine floating dust particles */}
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />

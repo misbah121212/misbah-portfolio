@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy: #231F3A;
-  --color-navy-light: #2A2544;
-  --color-lavender: #E2D5EF;
-  --color-lavender-dark: #C2ADD9;
-  --color-peach: #F0B3A6;
-  --color-cream: #FDFBF8;
-  --color-white: #FFFFFF;
+  --color-navy: #221B39;
+  --color-navy-light: #34274F;
+  --color-lavender: #D8C8FF;
+  --color-lavender-dark: #9B72FF;
+  --color-peach: #F8D8E7;
+  --color-cream: #F8F5FC;
+  --color-white: #FFFDFE;
   
   --font-serif: var(--font-playfair), serif;
   --font-sans: var(--font-inter), sans-serif;
@@ -33,8 +33,8 @@
 
 @layer base {
   :root {
-    --background: #F4EFF9; /* Soft professional lilac */
-    --foreground: var(--color-navy);
+    --background: #F8F5FC;
+    --foreground: #221B39;
   }
 }
 
@@ -44,7 +44,7 @@ html {
 
 body {
   background-color: transparent;
-  color: var(--color-white);
+  color: #221B39;
   font-family: var(--font-sans);
   overflow-x: hidden;
 }
@@ -56,29 +56,9 @@ body {
   }
 }
 
-/* Global Text and Component Color Overrides for Spatial Theme */
-.text-navy {
-  color: var(--color-white) !important;
-}
-.text-navy\/80 {
-  color: rgba(255, 255, 255, 0.8) !important;
-}
-.text-navy\/70 {
-  color: rgba(255, 255, 255, 0.75) !important;
-}
-.text-navy\/60 {
-  color: rgba(255, 255, 255, 0.6) !important;
-}
-.text-navy\/40 {
-  color: rgba(255, 255, 255, 0.4) !important;
-}
-
-/* Force light colors on stats and badges */
-.bg-navy\/5 {
-  background-color: rgba(255, 255, 255, 0.05) !important;
-}
-.border-navy\/10 {
-  border-color: rgba(255, 255, 255, 0.1) !important;
+/* Force light colors on dark stats left panel */
+.dark-glass-text {
+  color: #FFFDFE !important;
 }
 
 /* Glassmorphic scrollbar */
