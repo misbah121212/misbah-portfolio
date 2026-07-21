@@ -26,31 +26,46 @@ html {
 }
 
 body {
-  background-color: var(--color-cream);
-  /* Aesthetic, professional subtle lilac gingham pattern */
-  background-image: 
-    linear-gradient(90deg, rgba(226, 213, 239, 0.3) 50%, transparent 50%),
-    linear-gradient(rgba(226, 213, 239, 0.3) 50%, transparent 50%);
-  background-size: 64px 64px;
-  background-attachment: fixed;
-  color: var(--foreground);
+  background-color: transparent;
+  color: var(--color-white);
   font-family: var(--font-sans);
   overflow-x: hidden;
 }
 
-/* Hide scrollbar for cleaner look */
+/* Custom Utilities for Glassmorphism */
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/10 backdrop-blur-3xl border border-white/20 shadow-[0_8px_32px_rgba(31,38,135,0.15)];
+  }
+}
+
+/* Glassmorphic scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-cream);
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-lavender-dark);
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-navy);
+  background: rgba(255, 255, 255, 0.4);
 }
 
 /* Hide Next.js dev indicator */
