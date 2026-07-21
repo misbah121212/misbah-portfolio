@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, X, SparkleIcon, Globe, Github } from "lucide-react";
+import { ArrowUpRight, X, SparkleIcon, Globe, FolderGit } from "lucide-react";
 import { SectionWrapper } from "../ui/SectionWrapper";
 import { SectionHeading } from "../ui/SectionHeading";
 import { TiltCard } from "../spatial/TiltCard";
@@ -238,7 +238,7 @@ export const Projects = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Github className="w-4 h-4" /> Github Repository
+                  <FolderGit className="w-4 h-4" /> Github Repository
                 </motion.a>
                 <motion.a
                   href="#"
