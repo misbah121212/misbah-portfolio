@@ -23,7 +23,7 @@ export const About = () => {
   const lineVariants = {
     hidden: { opacity: 0, y: 10 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
-  };
+  } as const;
 
   return (
     <section id="about" className="relative w-full overflow-hidden py-12">
