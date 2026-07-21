@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { SparkleIcon } from "../ui/SparkleIcon";
-import { Github, Linkedin, Mail, FileText, Award, Trophy, ShieldCheck, Briefcase } from "lucide-react";
+import { Globe, Hash, Mail, FileText, Award, Trophy, ShieldCheck, Briefcase } from "lucide-react";
 import { TiltCard } from "./TiltCard";
 import { motion } from "framer-motion";
 
@@ -51,8 +51,8 @@ export const LeftProfilePanel = () => {
 
         {/* Social Icons Bottom */}
         <div className="mt-auto w-full flex justify-between items-center px-2 relative z-10">
-          <SocialIcon href="https://github.com/misbah121212" icon={<Github className="w-5 h-5" />} />
-          <SocialIcon href="https://linkedin.com/in/umme-misbah-sikandar" icon={<Linkedin className="w-5 h-5" />} />
+          <SocialIcon href="https://github.com/misbah121212" icon={<Globe className="w-5 h-5" />} />
+          <SocialIcon href="https://linkedin.com/in/umme-misbah-sikandar" icon={<Hash className="w-5 h-5" />} />
           <SocialIcon href="mailto:misbasikandar7@gmail.com" icon={<Mail className="w-5 h-5" />} />
           <SocialIcon href="/resume.pdf" icon={<FileText className="w-5 h-5" />} />
         </div>
