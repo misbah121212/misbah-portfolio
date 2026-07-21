@@ -4,7 +4,6 @@ import "./globals.css";
 import { LeftProfilePanel } from "@/components/spatial/LeftProfilePanel";
 import { RightSkillsPanel } from "@/components/spatial/RightSkillsPanel";
 import { BottomDock } from "@/components/spatial/BottomDock";
-import { TopPillNav } from "@/components/spatial/TopPillNav";
 import { AmbientRoom } from "@/components/spatial/AmbientRoom";
 import { CursorTracker } from "@/components/spatial/CursorTracker";
 
@@ -48,14 +47,12 @@ export default function RootLayout({
             {/* Left Profile Panel (300px wide, 720px high) */}
             <LeftProfilePanel />
 
-            {/* Center Column Wrapper (Navbar + Center Main Window) */}
-            <div className="flex flex-col gap-5 relative w-full lg:w-[920px] h-[800px] justify-between">
-              {/* Floating Navigation (640px wide, 70px height) */}
-              <TopPillNav />
+            {/* Center Column Wrapper (Center Main Window shifted up) */}
+            <div className="flex flex-col relative w-full lg:w-[920px] h-[700px]">
               
               {/* Center Main Window (920px wide, 700px high, Main Glass rgba(255,255,255,0.12)) */}
               <main 
-                className="w-full h-[700px] rounded-[40px] overflow-y-auto overflow-x-hidden custom-scrollbar relative border"
+                className="w-full h-full rounded-[40px] overflow-y-auto overflow-x-hidden custom-scrollbar relative border"
                 style={{
                   background: "rgba(255, 255, 255, 0.12)",
                   backdropFilter: "blur(55px)",
