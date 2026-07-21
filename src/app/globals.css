@@ -12,6 +12,23 @@
   --font-serif: var(--font-playfair), serif;
   --font-sans: var(--font-inter), sans-serif;
   --font-signature: var(--font-great-vibes), cursive;
+
+  --animate-spin-slow: spin-slow 20s linear infinite;
+  --animate-bounce-slow: bounce-slow 6s ease-in-out infinite;
+  --animate-shine: shine 0.8s ease-in-out;
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @keyframes bounce-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+  @keyframes shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
 }
 
 @layer base {
@@ -37,6 +54,31 @@ body {
   .glass-panel {
     @apply bg-white/10 backdrop-blur-3xl border border-white/20 shadow-[0_8px_32px_rgba(31,38,135,0.15)];
   }
+}
+
+/* Global Text and Component Color Overrides for Spatial Theme */
+.text-navy {
+  color: var(--color-white) !important;
+}
+.text-navy\/80 {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+.text-navy\/70 {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+.text-navy\/60 {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.text-navy\/40 {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Force light colors on stats and badges */
+.bg-navy\/5 {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+.border-navy\/10 {
+  border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 /* Glassmorphic scrollbar */
